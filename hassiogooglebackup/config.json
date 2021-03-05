@@ -2,13 +2,13 @@
     "name": "Backup Hassio to Google Drive",
     "version": "1.7.7",
     "slug": "googlebackup",
-    "description": "Backup hass.io snapshots to Google Drive.",
+    "description": "JPG-Backup hass.io snapshots to Google Drive.",
     "arch": [
       "aarch64",
       "amd64",
       "armhf"
     ],
-    "url": "https://github.com/samccauley/addon-hassiogooglebackup#readme",
+    "url": "https://github.com/ulf111/jpgsync#readme",
     "startup": "services",
     "webui": "http://[HOST]:[PORT:8000]/gb",
     "hassio_api": true,
@@ -16,8 +16,8 @@
     "homeassistant_api": true,
     "map": ["config", "ssl", "addons", "backup:rw", "share"],
     "options": {
-      "fromPattern" : "/backup/*.tar",
-      "backupDirID" : "Some_Google_Drive_Unique_Opaque_Folder_ID",
+      "fromPattern" : "/config/www/Klingel/*.tar",
+      "backupDirID" : "1PstwLG1Ck_vP9f-JYo6f3fRs3dpNRDPA",
       "purge" : {"enabled" : false, "preserve" : 3},
       "purge_google" : {"enabled" : false, "preserve" : 12},
       "debug" : false},
