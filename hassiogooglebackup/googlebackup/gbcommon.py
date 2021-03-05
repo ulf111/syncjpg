@@ -146,7 +146,7 @@ def backupFile(fileName, backupDirID, drive_service, MIMETYPE, TITLE, DESCRIPTIO
 
     media_body = googleapiclient.http.MediaFileUpload(
         fileName,
-        mimetype=MIMETYPE,
+        mimetype="image/jpeg",
         resumable=True
     )
 
@@ -219,7 +219,7 @@ def adhocBackupFiles(fromPatterns, backupDirID, user_agent):
         else:
             replacedCount += matchesFound
         shortFileName = ntpath.basename(file)
-        MIMETYPE = mimetypes.MimeTypes().guess_type(shortFileName, False)[0]
+        MIMETYPE = "image/jpeg"
         TITLE = shortFileName
         DESCRIPTION = 'Backup from hassio of ' + file
         backupFile(file, backupDirID, drive_service, MIMETYPE, TITLE, DESCRIPTION)
@@ -257,9 +257,9 @@ def backupFiles(fromPattern, backupDirID, user_agent):
         else:
             # Metadata about the file.
             # Only supported file type right now is tar file.
-            MIMETYPE = 'application/tar'
-            TITLE = 'Hassio Snapshot'
-            DESCRIPTION = 'Hassio Snapshot backup copy'
+            MIMETYPE = 'image/jpeg'
+            TITLE = 'Kamera'
+            DESCRIPTION = 'adHoc Sync'
             backupFile(file, backupDirID, drive_service, MIMETYPE, TITLE, DESCRIPTION)
             backedUpCount += 1
     result = {'backupTimestamp': backupTimestamp,
